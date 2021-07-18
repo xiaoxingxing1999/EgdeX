@@ -1,0 +1,21 @@
+# Copyright 2019 Dell Inc. All rights reserved.
+name: "edgex_arduino"
+manufacturer: "Dell"
+model: "Cam123456"
+labels: 
+    - "arduino"
+description: "arduino profile"
+coreCommands: 
+  - 
+    name: temperature
+    put: 
+        path: "/api/v1/devices/{deviceId}/temperature"
+        responses:
+          - 
+            code: "204"
+            description: "arduino temperature"
+            expectedValues: ["temperature"]
+          -
+            code: "503"
+            description: "service unavailable"
+            expectedValues: ["carerror"]
